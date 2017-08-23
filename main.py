@@ -25,9 +25,10 @@ dequeue_seq_len, dequeue1, dequeue2 = random_shuffle_queue(parsed_length,
                                                            parsed_input_1,
                                                            parsed_input_2)
 
-sequence_length, bucketed_tensors = bucket_by_seq_len(seq_len=dequeue_seq_len,
+sequence_length_pre_pad, bucketed_tensors = bucket_by_seq_len(seq_len=dequeue_seq_len,
                                                       input_tensors=(dequeue1, dequeue2))
-sequence_length = tf.reduce_max(sequence_length, axis=0)
+shape = tf.shape(bucketed_tensors[0])[1]
+sequence_length_post_pad = tf.map_fn(fn=(lambda x: shape),elems=sequence_length_pre_pad)
 
 with tf.Session() as sess:
     init_op = tf.group(tf.global_variables_initializer(),
@@ -37,7 +38,7 @@ with tf.Session() as sess:
     threads = tf.train.start_queue_runners(sess=sess, coord=coord)
     try:
         while tf.errors.OutOfRangeError:
-            seq_len, buk = sess.run([sequence_length, bucketed_tensors])
+            buk, seq_len = sess.run([bucketed_tensors, sequence_length_post_pad])
             print("length", seq_len)
             print(buk)
 
