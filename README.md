@@ -4,6 +4,7 @@
 
 Compatible with Tensorflow 1.x and Python 3.4 . Please upgrade if you have Tensorflow 0.x.
 Note: Please bear in mind that this was designed for a word level rnn and hence coupled input and output tensors were needed hence the tupple being passed to bucket_by_sequence_length..
+Furthermore, this uses a RandomShuffleQueue to provide better training over many epochs.
 
 <div align="center">  <img src="https://www.tensorflow.org/images/tf_logo_transp.png" width="200"><br><br></div>
 This is an dirty implementation of this function using TFRecords. I will be commenting this soon, in the meantime please make an issue for help.
@@ -16,7 +17,8 @@ git clone git@github.com:/francotheengineer/Bucket_by_sequence_length.git
 python3 main.py
 ```
 
-## Output: 
+## Output:
+*the zeros are padding*
 
 ```python
  length [5 5 5]
