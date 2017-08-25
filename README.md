@@ -11,12 +11,12 @@ Tensorflow 1.2 and Python 3.4
 ## How to use it?
 
 ```git clone git@github.com:/francotheengineer/Bucket_by_sequence_length.git 
-python3 main.py ```
+python3 main.py```
 
 ## Output: 
 
  ```
-  length [5 5 5]
+ 		 length [5 5 5]
 		[[4 4 4 4 0] [4 4 4 4 0] [5 5 5 5 5]] [[9 9 9 9 0] [9 9 9 9 0] [9 9 9 9 9]]
 		
 		length [5 5 5]
