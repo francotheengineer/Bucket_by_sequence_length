@@ -1,6 +1,6 @@
 # Tensorflow's bucket_by_sequence_length Example
-### Example on how to use a Tensorflow Queue, bucket_by_sequence_length and TFRecords to feed data to your model. Compatible with 
-Tensorflow 1.x. Please upgrade if you have Tensorflow 0.x.
+### Example on how to use a Tensorflow Queue, bucket_by_sequence_length and TFRecords to feed data to your model. 
+Compatible with Tensorflow 1.x and Python 3.4 . Please upgrade if you have Tensorflow 0.x.
 Note: Please bear in mind that this was designed for a word level rnn and hence coupled input and output tensors were needed hence the tupple being passed to bucket_by_sequence_length..
 
 <div align="center">  <img src="https://www.tensorflow.org/images/tf_logo_transp.png" width="200"><br><br></div>This is an dirty implementation of this function using TFRecords. I will be commenting this soon, in the meantime please make an issue for help.
