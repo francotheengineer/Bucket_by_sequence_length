@@ -1,5 +1,7 @@
 # Tensorflow's bucket_by_sequence_length Example
-### Example on how to use a Tensorflow Queue, bucket_by_sequence_length and TFRecords to feed data to your model. 
+
+### Example on how to use a Tensorflow Queue, bucket_by_sequence_length and TFRecords to feed data to your model.
+
 Compatible with Tensorflow 1.x and Python 3.4 . Please upgrade if you have Tensorflow 0.x.
 Note: Please bear in mind that this was designed for a word level rnn and hence coupled input and output tensors were needed hence the tupple being passed to bucket_by_sequence_length..
 
@@ -9,7 +11,7 @@ Tensorflow 1.2 and Python 3.4
 ## How to use it?
 
 ```git clone git@github.com:/francotheengineer/Bucket_by_sequence_length.git 
-python3 main.py```
+python3 main.py ```
 
 ## Output: 
 
@@ -37,6 +39,6 @@ python3 main.py```
 		
 		Done - out of range
  ```
-
+ 
 ## For Search Purposes:
 from tensorflow.contrib.training.python.training.bucket_ops /import bucket_by_sequence_length
